@@ -1,0 +1,4 @@
+.idea
+MNIST
+__pycache__
+lightning_logs
