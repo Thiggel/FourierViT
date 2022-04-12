@@ -26,12 +26,13 @@ class VisionTransformer(LightningModule):
             num_heads: int = 12,
             embed_dim: int = 768,
             dropout: float = 0.1,
-            learning_rate: float = 1e-3
+            learning_rate: float = 1e-3,
+            filename: str = 'model.pt'
     ) -> None:
         super().__init__()
         self.model_type = 'Transformer'
 
-        self.filename = 'model.pt'
+        self.filename = filename
 
         # the embedding dimension is used throughout the entire model
         # it is a hyperparameter of the transformer encoder layer
