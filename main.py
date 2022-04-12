@@ -10,9 +10,9 @@ from json import dumps
 from VisionTransformer import VisionTransformer
 from MnistDatamodule import MnistDatamodule
 
-data_module = MnistDatamodule()
 
 SAVED_DIR = 'saved'
+
 
 def objective(trial: Trial):
     patch_size = trial.suggest_categorical('patch_size', [1, 2, 4])
@@ -26,6 +26,8 @@ def objective(trial: Trial):
     })
 
     print("Hyper-parameters: ", hyperparams)
+
+    data_module = MnistDatamodule()
 
     model = VisionTransformer(
         image_size=28,
